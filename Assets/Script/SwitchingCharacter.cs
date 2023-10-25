@@ -31,6 +31,7 @@ public class SwitchingCharacter : MonoBehaviour
             WaiterActive = true;
             ChefActive = false;
             FoodManagerActive = false;
+            Debug.Log("Waiter");
         }
     }
     public void SwitchToFoodManager()
@@ -43,6 +44,7 @@ public class SwitchingCharacter : MonoBehaviour
             WaiterActive = false;
             ChefActive = false;
             FoodManagerActive = true;
+            Debug.Log("Manager");
         }
     }
     
@@ -56,6 +58,7 @@ public class SwitchingCharacter : MonoBehaviour
             WaiterActive = false;
             ChefActive = true;
             FoodManagerActive = false;
+            Debug.Log("Chef");
         }
     }
 }
