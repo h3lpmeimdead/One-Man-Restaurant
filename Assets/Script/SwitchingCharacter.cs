@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class SwitchingCharacter : MonoBehaviour
 {
-    public Player Chef;
-    public Player Waiter;
-    public Player FoodManager;
-    public bool WaiterActive = true;
-    public bool FoodManagerActive = false;
-    public bool ChefActive = false;
+    public CinemachineVirtualCamera vcCamera;
+    public GameObject waiter, foodManager, chef;
+    
     // Start is called before the first frame update
     void Start()
     {
+        waiter = GameObject.Find("Waiter");
+        foodManager = GameObject.Find("FoodManager");
+        chef = GameObject.Find("Chef");
         
     }
 
@@ -23,42 +24,24 @@ public class SwitchingCharacter : MonoBehaviour
     }
     public void SwitchToWaiter()
     {
-        if(WaiterActive == false)
-        {
-            Waiter.enabled = true;
-            Chef.enabled = false;
-            FoodManager.enabled = false;
-            WaiterActive = true;
-            ChefActive = false;
-            FoodManagerActive = false;
-            Debug.Log("Waiter");
-        }
+        vcCamera.Follow = waiter.transform;
+        waiter.GetComponent<Player>().enabled = true;
+        foodManager.GetComponent<Player>().enabled = false;
+        chef.GetComponent<Player>().enabled = false;
     }
     public void SwitchToFoodManager()
     {
-        if (FoodManagerActive == false)
-        {
-            Waiter.enabled = false;
-            Chef.enabled = false;
-            FoodManager.enabled = true;
-            WaiterActive = false;
-            ChefActive = false;
-            FoodManagerActive = true;
-            Debug.Log("Manager");
-        }
+        vcCamera.Follow = foodManager.transform;
+        waiter.GetComponent<Player>().enabled = false;
+        foodManager.GetComponent<Player>().enabled = true;
+        chef.GetComponent<Player>().enabled = false;
     }
     
     public void SwitchToChef()
     {
-        if (ChefActive == false)
-        {
-            Waiter.enabled = false;
-            Chef.enabled = true;
-            FoodManager.enabled = false;
-            WaiterActive = false;
-            ChefActive = true;
-            FoodManagerActive = false;
-            Debug.Log("Chef");
-        }
+        vcCamera.Follow = chef.transform;
+        waiter.GetComponent<Player>().enabled = false;
+        foodManager.GetComponent<Player>().enabled = false;
+        chef.GetComponent<Player>().enabled = true;
     }
 }
