@@ -4960,7 +4960,7 @@ GameObject:
   - component: {fileID: 262452945}
   - component: {fileID: 262452944}
   m_Layer: 5
-  m_Name: FoodManager
+  m_Name: FoodManager1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5530,7 +5530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6b26bb9c0ca752d4f98d5a301bbd4bc7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f3e5e33bdc1eaf418a74619f5702506, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5933,7 +5933,7 @@ GameObject:
   - component: {fileID: 733734912}
   - component: {fileID: 733734911}
   m_Layer: 5
-  m_Name: Chef
+  m_Name: Chef1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6009,7 +6009,7 @@ GameObject:
   - component: {fileID: 1050859300}
   - component: {fileID: 1050859299}
   m_Layer: 5
-  m_Name: Waiter
+  m_Name: Waiter1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6371,7 +6371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d3c94ab9816d3184db8afd19f23c5456, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f3e5e33bdc1eaf418a74619f5702506, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6852,7 +6852,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797628906}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: be844f90d384bb643ad83f2af7928419, type: 2}
   m_CullingMode: 0
