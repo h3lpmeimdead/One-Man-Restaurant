@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Unity.Notifications.Android;
 
 public class SwitchingCharacter : MonoBehaviour
 {
     public CinemachineVirtualCamera vcCamera;
     public GameObject waiter, foodManager, chef;
+    //[SerializeField] Player player;
+    
+    //private float shakeTime = 5f;
     
     // Start is called before the first frame update
     void Start()
@@ -40,6 +44,7 @@ public class SwitchingCharacter : MonoBehaviour
     public void SwitchToChef()
     {
         vcCamera.Follow = chef.transform;
+        //player.ShakingCam();
         waiter.GetComponent<Player>().enabled = false;
         foodManager.GetComponent<Player>().enabled = false;
         chef.GetComponent<Player>().enabled = true;
