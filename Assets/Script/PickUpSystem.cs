@@ -9,6 +9,7 @@ public class PickUpSystem : MonoBehaviour
     private GameObject holdItem;
     private UIScript uiScript;
     private bool canPick;
+    private SpriteRenderer spriteRenderer;
     public Player player;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class PickUpSystem : MonoBehaviour
         uiScript = GetComponent<UIScript>();
         canPick = true;
         player = GetComponent<Player>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -35,6 +37,8 @@ public class PickUpSystem : MonoBehaviour
         {
             if(collider.CompareTag("Interactable") && canPick == true)
             {
+                spriteRenderer = collider.GetComponent<SpriteRenderer>();
+                spriteRenderer.sortingOrder = 1;
                 holdItem = collider.gameObject;
                 holdItem.transform.SetParent(transform); // set the object to be the child of the player
                 holdItem.transform.localPosition = Vector3.zero;
@@ -54,10 +58,6 @@ public class PickUpSystem : MonoBehaviour
         holdItem.transform.SetParent(null);
         holdItem = null;
         canPick = true;
-    }
-
-    public void checkForCharacter()
-    {
-
+        spriteRenderer.sortingOrder = -1;
     }
 }
