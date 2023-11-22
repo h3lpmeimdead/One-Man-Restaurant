@@ -7,10 +7,12 @@ public class Player : MonoBehaviour
     public Joystick movementJoystick;
     public float playerSpeed;
     private Rigidbody2D rb;
+    public int catID;
    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        Debug.Log(catID);
     }
 
     // Update is called once per frame

@@ -29,6 +29,7 @@ public class SwitchingCharacter : MonoBehaviour
     public void SwitchToWaiter()
     {
         vcCamera.Follow = waiter.transform;
+        GameManager.Instance.currentActiveCat = 0;
         waiter.GetComponent<Player>().enabled = true;
         foodManager.GetComponent<Player>().enabled = false;
         chef.GetComponent<Player>().enabled = false;
@@ -36,6 +37,7 @@ public class SwitchingCharacter : MonoBehaviour
     public void SwitchToFoodManager()
     {
         vcCamera.Follow = foodManager.transform;
+        GameManager.Instance.currentActiveCat = 1;
         waiter.GetComponent<Player>().enabled = false;
         foodManager.GetComponent<Player>().enabled = true;
         chef.GetComponent<Player>().enabled = false;
@@ -44,6 +46,7 @@ public class SwitchingCharacter : MonoBehaviour
     public void SwitchToChef()
     {
         vcCamera.Follow = chef.transform;
+        GameManager.Instance.currentActiveCat = 2;
         //player.ShakingCam();
         waiter.GetComponent<Player>().enabled = false;
         foodManager.GetComponent<Player>().enabled = false;
