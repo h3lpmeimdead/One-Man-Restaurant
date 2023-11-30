@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2962685659212003754}
   - component: {fileID: 6870456265445277602}
   - component: {fileID: -4859707983738553959}
+  - component: {fileID: 5382032075081530920}
   m_Layer: 0
   m_Name: 59_jelly
   m_TagString: Interactable
@@ -101,3 +102,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &5382032075081530920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424273692556048937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d39b8cf013e914f9fa547c56362b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  radius: 1
+  circle: {fileID: 2962685659212003754}

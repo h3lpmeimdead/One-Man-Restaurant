@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8133549359158631272}
   - component: {fileID: 8544508842629251821}
   - component: {fileID: 4513761654988908235}
+  - component: {fileID: -3780168945644792415}
   m_Layer: 0
   m_Name: 16_burger_dish
   m_TagString: Interactable
@@ -101,3 +102,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &-3780168945644792415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3762544080438900645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d39b8cf013e914f9fa547c56362b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  radius: 1
+  circle: {fileID: 8133549359158631272}

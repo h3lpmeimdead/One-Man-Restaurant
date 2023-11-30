@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7176189847552290606}
   - component: {fileID: 1953983156765094384}
   - component: {fileID: -379882187128833488}
+  - component: {fileID: -1174250227765056444}
   m_Layer: 0
   m_Name: 09_baguette
   m_TagString: Interactable
@@ -101,3 +102,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &-1174250227765056444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8676879890427446738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d39b8cf013e914f9fa547c56362b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  radius: 1
+  circle: {fileID: 7176189847552290606}

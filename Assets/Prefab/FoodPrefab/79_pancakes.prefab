@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3209097009868861680}
   - component: {fileID: 2097597429218145189}
   - component: {fileID: -2419049145011355000}
+  - component: {fileID: -4521640683120881883}
   m_Layer: 0
   m_Name: 79_pancakes
   m_TagString: Interactable
@@ -101,3 +102,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &-4521640683120881883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2295481381144169378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d39b8cf013e914f9fa547c56362b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  radius: 1
+  circle: {fileID: 3209097009868861680}

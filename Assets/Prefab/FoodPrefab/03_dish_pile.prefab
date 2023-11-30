@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1390058546489033511}
   - component: {fileID: 5842165368204319061}
   - component: {fileID: -9010146005864564648}
+  - component: {fileID: 3923444559008177999}
   m_Layer: 0
   m_Name: 03_dish_pile
   m_TagString: Interactable
@@ -101,3 +102,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &3923444559008177999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2912766774529739237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29d39b8cf013e914f9fa547c56362b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  radius: 1
+  circle: {fileID: 1390058546489033511}
