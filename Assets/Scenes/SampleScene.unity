@@ -5537,7 +5537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 1357388977}
   playerSpeed: 5
-  catID: 0
+  catID: 2
 --- !u!114 &331133949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9799,7 +9799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 1357388977}
   playerSpeed: 5
-  catID: 0
+  catID: 1
 --- !u!95 &1797628912
 Animator:
   serializedVersion: 4

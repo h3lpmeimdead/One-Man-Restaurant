@@ -37,6 +37,10 @@ public class PickUpSystem : MonoBehaviour
         {
             if(collider.CompareTag("Interactable") && canPick == true)
             {
+                if (GameManager.Instance.currentActiveCat != player.catID)
+                {
+                    return;
+                }
                 spriteRenderer = collider.GetComponent<SpriteRenderer>();
                 spriteRenderer.sortingOrder = 1;
                 holdItem = collider.gameObject;
@@ -52,8 +56,12 @@ public class PickUpSystem : MonoBehaviour
 
     public void DropItem()
     {
+        Debug.Log("a");
         if (GameManager.Instance.currentActiveCat != player.catID)
+        {
             return;
+        }
+        Debug.Log("b");
         holdItem.GetComponent<Collider2D>().enabled = true;
         holdItem.transform.SetParent(null);
         holdItem = null;
