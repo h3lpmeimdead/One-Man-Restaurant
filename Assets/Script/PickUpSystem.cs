@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance.VisualScripting;
+using UnityEngine.UIElements;
 
 public class PickUpSystem : MonoBehaviour
 {
     private GameObject holdItem;
     private UIScript uiScript;
-    private bool canPick;
+    public bool canPick;
     private SpriteRenderer spriteRenderer;
     public Player player;
+    private CheckForPlacementScript checkForPlacement;
+    //private bool holdingItem;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +21,7 @@ public class PickUpSystem : MonoBehaviour
         uiScript = GetComponent<UIScript>();
         canPick = true;
         player = GetComponent<Player>();
+        checkForPlacement = GetComponent<CheckForPlacementScript>();
         //spriteRenderer = GetComponent<SpriteRenderer>();
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -48,6 +52,7 @@ public class PickUpSystem : MonoBehaviour
                 holdItem.transform.localPosition = Vector3.zero;
                 holdItem.GetComponent<Collider2D>().enabled = false; // set the collider of the object to false
                 canPick = false;
+                //holdingItem = true;
                 break;
             }
         }
@@ -66,6 +71,20 @@ public class PickUpSystem : MonoBehaviour
         holdItem.transform.SetParent(null);
         holdItem = null;
         canPick = true;
+        //holdingItem = false;
         spriteRenderer.sortingOrder = -1;
+    }
+
+
+    public void PlaceObject()
+    {
+        if (checkForPlacement.isInPlace == true && canPick == false)
+        {
+            if (GameManager.Instance.currentActiveCat != player.catID)
+            {
+                return;
+            }
+            holdItem.transform.position = checkForPlacement.Pos.transform.position;
+        }
     }
 }
