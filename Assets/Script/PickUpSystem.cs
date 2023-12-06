@@ -84,6 +84,11 @@ public class PickUpSystem : MonoBehaviour
             {
                 return;
             }
+            holdItem.GetComponent<Collider2D>().enabled = true;
+            holdItem.transform.SetParent(null);
+            holdItem = null;
+            canPick = true;
+            spriteRenderer.sortingOrder = -1;
             holdItem.transform.position = checkForPlacement.Pos.transform.position;
         }
     }
