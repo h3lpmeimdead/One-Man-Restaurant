@@ -82,19 +82,23 @@ public class PickUpSystem : MonoBehaviour
 
     public void PlaceObject()
     {
-        if (canPick == false)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
+        if (hit.collider != null && hit.collider.CompareTag("Counter"))
         {
             if (GameManager.Instance.currentActiveCat != player.catID)
             {
                 return;
             }
             holdItem.GetComponent<Collider2D>().enabled = true;
-            holdItem.transform.SetParent(null);
+            //holdItem.transform.SetParent(null);
             holdItem = null;
             canPick = true;
             spriteRenderer.sortingOrder = 0;
-            holdItem.transform.position = _position;
-            _position = checkForPlacement.Pos.transform.position;
+            holdItem.transform.parent = hit.collider.transform;
+            holdItem.transform.position = hit.collider.transform.position;
+            holdItem.transform.position = checkForPlacement.Pos.transform.position;
         }
     }
+
+    
 }

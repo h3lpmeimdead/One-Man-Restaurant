@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 4823464}
   m_Layer: 0
   m_Name: Pos
-  m_TagString: Untagged
+  m_TagString: Counter
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 55969673}
   m_Layer: 0
   m_Name: checkForPlacement (1)
-  m_TagString: Untagged
+  m_TagString: Counter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -322,7 +322,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pos: {fileID: 4823463}
   placeButton: {fileID: 521000335}
-  isInPlace: 0
 --- !u!1 &67226099
 GameObject:
   m_ObjectHideFlags: 0
@@ -5922,7 +5921,7 @@ GameObject:
   - component: {fileID: 448628290}
   m_Layer: 0
   m_Name: Pos
-  m_TagString: Untagged
+  m_TagString: Counter
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6655,7 +6654,7 @@ GameObject:
   - component: {fileID: 548422064}
   m_Layer: 0
   m_Name: Pos
-  m_TagString: Untagged
+  m_TagString: Counter
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9040,7 +9039,7 @@ GameObject:
   - component: {fileID: 941757910}
   m_Layer: 0
   m_Name: checkForPlacement
-  m_TagString: Untagged
+  m_TagString: Counter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9079,7 +9078,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941757907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.52, y: -0.54, z: 0.024135543}
+  m_LocalPosition: {x: 4.52, y: -3.53, z: 0.024135543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9101,7 +9100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pos: {fileID: 448628289}
   placeButton: {fileID: 521000335}
-  isInPlace: 0
 --- !u!1 &1050859297
 GameObject:
   m_ObjectHideFlags: 0
@@ -10341,7 +10339,7 @@ GameObject:
   - component: {fileID: 1789546277}
   m_Layer: 0
   m_Name: checkForPlacement (2)
-  m_TagString: Untagged
+  m_TagString: Counter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10402,7 +10400,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pos: {fileID: 548422063}
   placeButton: {fileID: 521000335}
-  isInPlace: 0
 --- !u!1 &1797628906
 GameObject:
   m_ObjectHideFlags: 0

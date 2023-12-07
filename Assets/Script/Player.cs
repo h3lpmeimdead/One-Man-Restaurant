@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log(catID);
+        //Debug.Log(catID);
     }
 
     // Update is called once per frame
