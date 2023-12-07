@@ -14,6 +14,7 @@ public class PickUpSystem : MonoBehaviour
     public Player player;
     private CheckForPlacementScript checkForPlacement;
     //private bool holdingItem;
+    Vector3 _position;
 
     // Start is called before the first frame update
     void Start()
@@ -61,24 +62,27 @@ public class PickUpSystem : MonoBehaviour
 
     public void DropItem()
     {
-        Debug.Log("a");
-        if (GameManager.Instance.currentActiveCat != player.catID)
+        if (canPick == false)
         {
-            return;
+            //Debug.Log("a");
+            if (GameManager.Instance.currentActiveCat != player.catID)
+            {
+                return;
+            }
+            Debug.Log("b");
+            holdItem.GetComponent<Collider2D>().enabled = true;
+            holdItem.transform.SetParent(null);
+            holdItem = null;
+            canPick = true;
+            //holdingItem = false;
+            spriteRenderer.sortingOrder = -1;
         }
-        Debug.Log("b");
-        holdItem.GetComponent<Collider2D>().enabled = true;
-        holdItem.transform.SetParent(null);
-        holdItem = null;
-        canPick = true;
-        //holdingItem = false;
-        spriteRenderer.sortingOrder = -1;
     }
 
 
     public void PlaceObject()
     {
-        if (checkForPlacement.isInPlace == true && canPick == false)
+        if (canPick == false)
         {
             if (GameManager.Instance.currentActiveCat != player.catID)
             {
@@ -88,8 +92,9 @@ public class PickUpSystem : MonoBehaviour
             holdItem.transform.SetParent(null);
             holdItem = null;
             canPick = true;
-            spriteRenderer.sortingOrder = -1;
-            holdItem.transform.position = checkForPlacement.Pos.transform.position;
+            spriteRenderer.sortingOrder = 0;
+            holdItem.transform.position = _position;
+            _position = checkForPlacement.Pos.transform.position;
         }
     }
 }

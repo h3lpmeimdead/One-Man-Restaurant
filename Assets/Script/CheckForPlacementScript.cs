@@ -6,20 +6,25 @@ public class CheckForPlacementScript : MonoBehaviour
 {
     public GameObject Pos;
     public GameObject placeButton;
-    public bool isInPlace;
+    //public bool isInPlace;
+    //public Transform pointPos;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        Pos = GetComponent<GameObject>();
+        //Pos = GetComponent<GameObject>();
         placeButton.SetActive(false);
+        //pointPos = Pos.transform; 
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            //isInPlace = true;
             placeButton.SetActive(true);
-            isInPlace = true;
+            //Debug.Log(isInPlace);
         }
     }
 
@@ -28,7 +33,7 @@ public class CheckForPlacementScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             placeButton.SetActive(false);
-            isInPlace = false;
+            //isInPlace = false;
         }
     }
 
