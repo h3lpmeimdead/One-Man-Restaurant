@@ -6,9 +6,10 @@ public class CheckForPlacementScript : MonoBehaviour
 {
     public GameObject Pos;
     public GameObject placeButton;
+    
     //public bool isInPlace;
     //public Transform pointPos;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,5 +42,11 @@ public class CheckForPlacementScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public Vector2 GetPos()
+    {
+        Vector2 PlacingPos = Pos.transform.position; 
+        return PlacingPos;
     }
 }

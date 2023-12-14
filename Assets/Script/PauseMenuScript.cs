@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PauseMenuScript : MonoBehaviour
 {
-    public GameObject pauseMenu;
+    [SerializeField] private GameObject pauseMenu;
     public bool isPaused;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isPaused)
+        if (isPaused)
         {
             PauseGame();
         }

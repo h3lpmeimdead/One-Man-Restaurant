@@ -8,18 +8,18 @@ using UnityEngine.UIElements;
 public class PickUpSystem : MonoBehaviour
 {
     private GameObject holdItem;
-    private UIScript uiScript;
+    //private UIScript uiScript;
     public bool canPick;
     private SpriteRenderer spriteRenderer;
     public Player player;
     private CheckForPlacementScript checkForPlacement;
     //private bool holdingItem;
-    Vector3 _position;
+    GameObject placedItem;
 
     // Start is called before the first frame update
     void Start()
     {
-        uiScript = GetComponent<UIScript>();
+        //uiScript = GetComponent<UIScript>();
         canPick = true;
         player = GetComponent<Player>();
         checkForPlacement = GetComponent<CheckForPlacementScript>();
@@ -69,12 +69,11 @@ public class PickUpSystem : MonoBehaviour
             {
                 return;
             }
-            Debug.Log("b");
+            //Debug.Log("b");
             holdItem.GetComponent<Collider2D>().enabled = true;
             holdItem.transform.SetParent(null);
             holdItem = null;
             canPick = true;
-            //holdingItem = false;
             spriteRenderer.sortingOrder = -1;
         }
     }
@@ -83,20 +82,19 @@ public class PickUpSystem : MonoBehaviour
     public void PlaceObject()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
-        if (hit.collider != null && hit.collider.CompareTag("Counter"))
+        if (canPick == false && hit.collider.CompareTag("Counter"))
         {
             if (GameManager.Instance.currentActiveCat != player.catID)
             {
                 return;
             }
-            holdItem.GetComponent<Collider2D>().enabled = true;
-            //holdItem.transform.SetParent(null);
+            Vector2 position = checkForPlacement.GetPos();
+            placedItem = Instantiate(holdItem, position, Quaternion.identity);
+            holdItem.GetComponent<Collider2D>().enabled = false;
+            holdItem.transform.SetParent(null);
             holdItem = null;
             canPick = true;
             spriteRenderer.sortingOrder = 0;
-            holdItem.transform.parent = hit.collider.transform;
-            holdItem.transform.position = hit.collider.transform.position;
-            holdItem.transform.position = checkForPlacement.Pos.transform.position;
         }
     }
 
