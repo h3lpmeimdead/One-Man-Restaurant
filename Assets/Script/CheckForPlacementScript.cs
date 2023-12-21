@@ -2,30 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckForPlacementScript : MonoBehaviour
+public class CheckForPlacementScript : MonoBehaviour, IPlaceable, IPickable
 {
     public GameObject Pos;
     public GameObject placeButton;
+    public GameObject placedObject;
     
-    //public bool isInPlace;
-    //public Transform pointPos;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        //Pos = GetComponent<GameObject>();
+        
         placeButton.SetActive(false);
-        //pointPos = Pos.transform; 
+        
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            //isInPlace = true;
+            
             placeButton.SetActive(true);
-            //Debug.Log(isInPlace);
+            
         }
     }
 
@@ -34,7 +35,7 @@ public class CheckForPlacementScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             placeButton.SetActive(false);
-            //isInPlace = false;
+            
         }
     }
 
@@ -48,5 +49,15 @@ public class CheckForPlacementScript : MonoBehaviour
     {
         Vector2 PlacingPos = Pos.transform.position; 
         return PlacingPos;
+    }
+
+    public void OnPlace(GameObject go)
+    {
+        go.transform.position = GetPos();
+    }
+
+    public void Pickable(GameObject go)
+    {
+        go.transform.localPosition = Vector3.zero;
     }
 }

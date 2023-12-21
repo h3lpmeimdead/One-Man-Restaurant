@@ -7,27 +7,23 @@ using UnityEngine.UIElements;
 
 public class PickUpSystem : MonoBehaviour
 {
-    private GameObject holdItem;
-    //private UIScript uiScript;
+    public GameObject holdItem;
     public bool canPick;
     private SpriteRenderer spriteRenderer;
     public Player player;
     private CheckForPlacementScript checkForPlacement;
-    //private bool holdingItem;
     GameObject placedItem;
+    public bool canDelete;
+    public IPlaceable placeable;
+    public IPickable pickable;
 
     // Start is called before the first frame update
     void Start()
     {
-        //uiScript = GetComponent<UIScript>();
         canPick = true;
         player = GetComponent<Player>();
         checkForPlacement = GetComponent<CheckForPlacementScript>();
-        //spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
+        //Debug.Log(player);
     }
     // Update is called once per frame
     void Update()
@@ -53,7 +49,7 @@ public class PickUpSystem : MonoBehaviour
                 holdItem.transform.localPosition = Vector3.zero;
                 holdItem.GetComponent<Collider2D>().enabled = false; // set the collider of the object to false
                 canPick = false;
-                //holdingItem = true;
+                canDelete = true;
                 break;
             }
         }
@@ -74,6 +70,7 @@ public class PickUpSystem : MonoBehaviour
             holdItem.transform.SetParent(null);
             holdItem = null;
             canPick = true;
+            canDelete = false;
             spriteRenderer.sortingOrder = -1;
         }
     }
@@ -81,22 +78,70 @@ public class PickUpSystem : MonoBehaviour
 
     public void PlaceObject()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up);
-        if (canPick == false && hit.collider.CompareTag("Counter"))
+        if (GameManager.Instance.currentActiveCat != player.catID)
         {
+            return;
+        }
+        placeable.OnPlace(holdItem);
+        holdItem.transform.SetParent(null);
+        canPick = true;
+        holdItem = null;
+        spriteRenderer.sortingOrder = 0;
+    }
+
+    public void PickFromTable()
+    {
+        if (GameManager.Instance.currentActiveCat != player.catID)
+        {
+            return;
+        }
+        pickable.Pickable(holdItem);
+        holdItem.transform.SetParent(transform);
+        spriteRenderer.sortingOrder = 1;
+        canPick = false;
+        canDelete = true;
+        holdItem.GetComponent<Collider2D>().enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.TryGetComponent<IPlaceable>(out var place))
+        {
+            placeable = place;
+        }
+        if(collision.TryGetComponent<IPickable>(out var pick))
+        {
+            pickable = pick;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.TryGetComponent<IPlaceable>(out var place))
+        {
+            placeable = null;
+        }
+        if (collision.TryGetComponent<IPickable>(out var pick))
+        {
+            pickable = null;
+        }
+    }
+
+    public void DeleteObject()
+    {
+        if (canPick == false && player.CompareTag("Trash"))
+        {
+            //Debug.Log("trash");
             if (GameManager.Instance.currentActiveCat != player.catID)
             {
                 return;
             }
-            Vector2 position = checkForPlacement.GetPos();
-            placedItem = Instantiate(holdItem, position, Quaternion.identity);
-            holdItem.GetComponent<Collider2D>().enabled = false;
+            holdItem.GetComponent<Collider2D>().enabled = true;
             holdItem.transform.SetParent(null);
-            holdItem = null;
+            Destroy(holdItem);
             canPick = true;
-            spriteRenderer.sortingOrder = 0;
+            canDelete = false;
         }
     }
-
     
 }
