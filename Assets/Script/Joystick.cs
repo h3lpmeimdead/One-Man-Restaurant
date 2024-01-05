@@ -5,17 +5,25 @@ using UnityEngine.EventSystems;
 
 public class Joystick : MonoBehaviour
 {
+    //string gameObjectname;
     public GameObject joystickBG;
     public GameObject joystick;
     public Vector2 joystickVec;
     public Vector2 joystickTouchPos;
     public Vector2 joystickOriginalPos;
     public float joystickRadius;
+    public SpriteRenderer spriteRenderer;
+    public Animator animator;
+    //public float angle;
     // Start is called before the first frame update
     void Start()
     {
         joystickOriginalPos = joystickBG.transform.position;
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4; 
+        animator = FindObjectOfType<Animator>();
+        spriteRenderer = FindObjectOfType<SpriteRenderer>();
+        //gameObjectname = gameObject.name;
+        //Debug.Log(gameObjectname);
     }
 
     public void PointerDown()
@@ -40,6 +48,7 @@ public class Joystick : MonoBehaviour
         {
             joystick.transform.position = joystickTouchPos + joystickVec * joystickRadius;
         }
+        
     }
 
     public void PointerUp()
@@ -52,6 +61,18 @@ public class Joystick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (joystickVec.x < 0)
+        {
+            animator.SetTrigger("move");
+            spriteRenderer.flipX = true;
+            Debug.Log("flipped");
+        }
+        if (joystickVec.x > 0)
+        {
+            animator.SetTrigger("move");
+            spriteRenderer.flipX = false;
+            Debug.Log("flippeda");
+        }
         
     }
 }

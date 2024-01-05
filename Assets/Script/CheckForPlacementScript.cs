@@ -20,24 +20,24 @@ public class CheckForPlacementScript : MonoBehaviour, IPlaceable, IPickable
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
             
-            placeButton.SetActive(true);
+    //        placeButton.SetActive(true);
             
-        }
-    }
+    //    }
+    //}
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
-        {
-            placeButton.SetActive(false);
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if(collision.gameObject.tag == "Player")
+    //    {
+    //        placeButton.SetActive(false);
             
-        }
-    }
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()
@@ -59,5 +59,13 @@ public class CheckForPlacementScript : MonoBehaviour, IPlaceable, IPickable
     public void Pickable(GameObject go)
     {
         go.transform.localPosition = Vector3.zero;
+    }
+
+    public void HighlightObject()
+    {
+        if (placeButton.activeSelf)
+            return;
+
+        placeButton.SetActive(true);
     }
 }

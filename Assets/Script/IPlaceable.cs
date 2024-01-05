@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IPlaceable 
 {
    public void OnPlace(GameObject go);
+
+    public void HighlightObject();
 }

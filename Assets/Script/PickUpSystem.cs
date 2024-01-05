@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance.VisualScripting;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+
+/*
+ * Player animation 4 dir
+ * raycast for player
+ * ui manager for canvas
+ * rewrite logic for placing button
+ */
 
 public class PickUpSystem : MonoBehaviour
 {
@@ -16,6 +25,8 @@ public class PickUpSystem : MonoBehaviour
     public bool canDelete;
     public IPlaceable placeable;
     public IPickable pickable;
+    public float angle;
+    public Joystick joystick;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +34,22 @@ public class PickUpSystem : MonoBehaviour
         canPick = true;
         player = GetComponent<Player>();
         checkForPlacement = GetComponent<CheckForPlacementScript>();
-        //Debug.Log(player);
+        
     }
     // Update is called once per frame
     void Update()
     {
-        
+        // using vector3,right to find angle between joystick position and vector3.right
+        angle = Vector3.Angle(joystick.joystick.transform.position, Vector3.right);
+        Debug.Log(angle);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, 1);
+
+        if (hit.collider != null)
+        {
+            Debug.Log(hit.collider.name);
+        }
+
+        Debug.DrawRay(transform.position, Vector3.right, Color.red);
     }
 
     public void PickUpItem()
