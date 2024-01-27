@@ -6,6 +6,7 @@ using TMPro;
 
 public class UIScript : MonoBehaviour
 {
+    [SerializeField] public GameObject creditui;
     [SerializeField] private GameObject panel;
     [SerializeField] public Animator animator;
     [SerializeField] private TMP_Text popUptext;
@@ -17,4 +18,8 @@ public class UIScript : MonoBehaviour
         animator.SetTrigger("PopUp");
     }
 
+    public void Start()
+    {
+        creditui.SetActive(false);
+    }
 }
