@@ -51,6 +51,7 @@ public class PickUpSystem : MonoBehaviour
         }
 
         Debug.DrawRay(transform.position, Vector3.right, Color.red);
+        
     }
 
     public void PickUpItem()
