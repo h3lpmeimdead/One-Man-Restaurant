@@ -12,16 +12,16 @@ public class Joystick : MonoBehaviour
     public Vector2 joystickTouchPos;
     public Vector2 joystickOriginalPos;
     public float joystickRadius;
-    public SpriteRenderer spriteRenderer;
-    public Animator animator;
+    //public SpriteRenderer spriteRenderer;
+    //public Animator animator;
     //public float angle;
     // Start is called before the first frame update
     void Start()
     {
         joystickOriginalPos = joystickBG.transform.position;
         joystickRadius = joystickBG.GetComponent<RectTransform>().sizeDelta.y / 4; 
-        animator = FindObjectOfType<Animator>();
-        spriteRenderer = FindObjectOfType<SpriteRenderer>();
+        //animator = FindObjectOfType<Animator>();
+        //spriteRenderer = FindObjectOfType<SpriteRenderer>();
         //gameObjectname = gameObject.name;
         //Debug.Log(gameObjectname);
     }
@@ -61,18 +61,18 @@ public class Joystick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (joystickVec.x < 0)
-        {
-            animator.SetTrigger("move");
-            spriteRenderer.flipX = true;
-            Debug.Log("flipped");
-        }
-        if (joystickVec.x > 0)
-        {
-            animator.SetTrigger("move");
-            spriteRenderer.flipX = false;
-            Debug.Log("flippeda");
-        }
+        //if (joystickVec.x < 0)
+        //{
+        //    animator.SetTrigger("move");
+        //    spriteRenderer.flipX = true;
+        //    Debug.Log("flipped");
+        //}
+        //if (joystickVec.x > 0)
+        //{
+        //    animator.SetTrigger("move");
+        //    spriteRenderer.flipX = false;
+        //    Debug.Log("flippeda");
+        //}
         
     }
 }

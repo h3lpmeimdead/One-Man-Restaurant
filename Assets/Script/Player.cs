@@ -9,12 +9,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public int catID;
     public SpriteRenderer spriteRenderer;
-    public Animator animator;
+    //public Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = gameObject.GetComponent<Animator>();
+        //animator = gameObject.GetComponent<Animator>();
         //Debug.Log(catID);
     }
 
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         else
         {
             rb.velocity = Vector2.zero;
-            animator.SetTrigger("still");
+            //animator.SetTrigger("still");
         }
 
     }

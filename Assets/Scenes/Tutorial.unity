@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1177, y: -382}
+  m_AnchoredPosition: {x: 953, y: -230}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &124533155
@@ -299,7 +299,6 @@ GameObject:
   - component: {fileID: 142453201}
   - component: {fileID: 142453205}
   - component: {fileID: 142453206}
-  - component: {fileID: 142453207}
   m_Layer: 2
   m_Name: Waiter
   m_TagString: Player
@@ -437,7 +436,6 @@ MonoBehaviour:
   playerSpeed: 5
   catID: 0
   spriteRenderer: {fileID: 142453203}
-  animator: {fileID: 142453207}
 --- !u!114 &142453206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,30 +450,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdItem: {fileID: 0}
   canPick: 0
-  player: {fileID: 0}
   canDelete: 0
   angle: 0
   joystick: {fileID: 0}
---- !u!95 &142453207
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142453200}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &181332327
 GameObject:
   m_ObjectHideFlags: 0
@@ -5165,7 +5142,6 @@ GameObject:
   m_Component:
   - component: {fileID: 304453331}
   - component: {fileID: 304453330}
-  - component: {fileID: 304453332}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -5227,18 +5203,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &304453332
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 304453329}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9d3e9a51f5bea3448eeb60a88085c95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &331133943
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,7 +5217,6 @@ GameObject:
   - component: {fileID: 331133944}
   - component: {fileID: 331133948}
   - component: {fileID: 331133949}
-  - component: {fileID: 331133950}
   m_Layer: 2
   m_Name: Chef
   m_TagString: Player
@@ -5391,7 +5354,6 @@ MonoBehaviour:
   playerSpeed: 5
   catID: 2
   spriteRenderer: {fileID: 331133946}
-  animator: {fileID: 331133950}
 --- !u!114 &331133949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5406,30 +5368,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdItem: {fileID: 0}
   canPick: 0
-  player: {fileID: 0}
   canDelete: 0
   angle: 0
   joystick: {fileID: 0}
---- !u!95 &331133950
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 331133943}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &359147398
 GameObject:
   m_ObjectHideFlags: 0
@@ -5688,6 +5629,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c45859f9e9eb6945818f31205295c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &457488800 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2658126447794522870, guid: 5ac80f6c1b8f20d4bab34bd9aecb2e37, type: 3}
+  m_PrefabInstance: {fileID: 2658126448243094378}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457488793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a30887740aec458498da6d3954c7a55d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &489558815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7002609975973315491, guid: bcb9b4c9bc8583c4ebae3d2c19d664e6, type: 3}
+  m_PrefabInstance: {fileID: 506554965}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &489558820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489558815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0ed068d52e5934d84411b2142ab9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &506554965
@@ -6477,6 +6446,23 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
   m_UseDelaunayMesh: 0
+--- !u!1 &592097596 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4053089515390737458, guid: 9f4ca5ba86289004fa68f1479e4fc56b, type: 3}
+  m_PrefabInstance: {fileID: 2145711740}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &592097601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592097596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0ed068d52e5934d84411b2142ab9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &598602258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9010,6 +8996,23 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7880648164580014991, guid: 64d61ca8724862940b0791580584e852, type: 3}
   m_PrefabInstance: {fileID: 7880648165674725748}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1672002799 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7188553377120162803, guid: 7b2d320b04a775541a4d94add3207260, type: 3}
+  m_PrefabInstance: {fileID: 1961404287}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1672002804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1672002799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b0ed068d52e5934d84411b2142ab9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1700600803
 GameObject:
   m_ObjectHideFlags: 0
@@ -9190,7 +9193,6 @@ GameObject:
   - component: {fileID: 1797628908}
   - component: {fileID: 1797628907}
   - component: {fileID: 1797628911}
-  - component: {fileID: 1797628912}
   - component: {fileID: 1797628913}
   m_Layer: 2
   m_Name: FoodManager
@@ -9329,27 +9331,6 @@ MonoBehaviour:
   playerSpeed: 5
   catID: 1
   spriteRenderer: {fileID: 1797628909}
-  animator: {fileID: 1797628912}
---- !u!95 &1797628912
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1797628906}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: be844f90d384bb643ad83f2af7928419, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1797628913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9364,7 +9345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   holdItem: {fileID: 0}
   canPick: 0
-  player: {fileID: 0}
   canDelete: 0
   angle: 0
   joystick: {fileID: 0}
@@ -9783,6 +9763,10 @@ PrefabInstance:
       propertyPath: popUptext
       value: 
       objectReference: {fileID: 604496111}
+    - target: {fileID: 2658126447794522871, guid: 5ac80f6c1b8f20d4bab34bd9aecb2e37, type: 3}
+      propertyPath: uiscript
+      value: 
+      objectReference: {fileID: 457488800}
     - target: {fileID: 2658126447794522871, guid: 5ac80f6c1b8f20d4bab34bd9aecb2e37, type: 3}
       propertyPath: pauseMenu
       value: 
@@ -10258,11 +10242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7880648165591737572, guid: 64d61ca8724862940b0791580584e852, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 955
+      value: 1175
       objectReference: {fileID: 0}
     - target: {fileID: 7880648165591737572, guid: 64d61ca8724862940b0791580584e852, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -230
+      value: -387
       objectReference: {fileID: 0}
     - target: {fileID: 7880648165591737573, guid: 64d61ca8724862940b0791580584e852, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

@@ -6,11 +6,11 @@ public class ButtonScript : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
     public bool isPaused;
-    UIScript uiscript;
+    [SerializeField] private UIScript uiscript;
 
     private void Start()
     {
-        uiscript = GameObject.FindGameObjectWithTag("Credit").GetComponent<UIScript>();
+        //uiscript = GameObject.FindGameObjectWithTag("Credit").GetComponent<UIScript>();
     }
     // Start is called before the first frame update
     void Awake()
@@ -69,13 +69,13 @@ public class ButtonScript : MonoBehaviour
         Application.OpenURL("https://ko-fi.com/thanhdayma");
     }
 
-    public void OpenCredit()
-    {
-        uiscript.creditui.SetActive(true);
-    }
+    //public void OpenCredit()
+    //{
+    //    uiscript.creditui.SetActive(true);
+    //}
     
-    public void CloseButton()
-    {
-        uiscript.creditui.SetActive(false);
-    }
+    //public void CloseButton()
+    //{
+    //    uiscript.creditui.SetActive(false);
+    //}
 }

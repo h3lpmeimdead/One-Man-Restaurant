@@ -17,9 +17,4 @@ public class UIScript : MonoBehaviour
         popUptext.text = text;
         animator.SetTrigger("PopUp");
     }
-
-    public void Start()
-    {
-        creditui.SetActive(false);
-    }
 }

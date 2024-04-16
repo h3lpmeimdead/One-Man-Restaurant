@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckForPlacementScript : MonoBehaviour, IPlaceable, IPickable
+public class CheckForPlacementScript : MonoBehaviour
 {
     public GameObject Pos;
     public GameObject placeButton;
@@ -20,24 +20,24 @@ public class CheckForPlacementScript : MonoBehaviour, IPlaceable, IPickable
     }
 
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-            
-    //        placeButton.SetActive(true);
-            
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if(collision.gameObject.tag == "Player")
-    //    {
-    //        placeButton.SetActive(false);
-            
-    //    }
-    //}
+            placeButton.SetActive(true);
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            placeButton.SetActive(false);
+
+        }
+    }
 
     // Update is called once per frame
     void Update()

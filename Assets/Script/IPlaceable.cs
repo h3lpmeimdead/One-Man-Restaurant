@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IPlaceable 
 {
-   public void OnPlace(GameObject go);
+   public void OnPlace(Vector2 targetPosition);
 
-    public void HighlightObject();
+    //public void HighlightObject();
 }
