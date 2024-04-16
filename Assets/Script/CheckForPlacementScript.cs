@@ -7,16 +7,11 @@ public class CheckForPlacementScript : MonoBehaviour
     public GameObject Pos;
     public GameObject placeButton;
     public GameObject placedObject;
-    
-    
-
 
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {     
         placeButton.SetActive(false);
-        
     }
 
 
@@ -39,12 +34,6 @@ public class CheckForPlacementScript : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public Vector2 GetPos()
     {
         Vector2 PlacingPos = Pos.transform.position; 
@@ -61,11 +50,4 @@ public class CheckForPlacementScript : MonoBehaviour
         go.transform.localPosition = Vector3.zero;
     }
 
-    public void HighlightObject()
-    {
-        if (placeButton.activeSelf)
-            return;
-
-        placeButton.SetActive(true);
-    }
 }

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PickableObject : MonoBehaviour, IPickable, IPlaceable
 {
+    public string text;
     public void OnPlace(Vector2 targetPosition)
     {
         GetComponent<Collider2D>().enabled = true;
@@ -16,5 +18,21 @@ public class PickableObject : MonoBehaviour, IPickable, IPlaceable
         transform.parent = go;
         transform.localPosition = Vector3.zero;
         GetComponent<Collider2D>().enabled = false;
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            InGameUI pop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<InGameUI>();
+            pop.popUp(text);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            InGameUI pop = GameObject.FindGameObjectWithTag("GameManager").GetComponent<InGameUI>();
+            pop.animator.SetTrigger("Close");
+        }
     }
 }

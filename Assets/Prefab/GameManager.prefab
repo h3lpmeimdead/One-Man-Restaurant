@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2658126447794522864}
   - component: {fileID: 2658126447794522865}
   - component: {fileID: 2658126447794522870}
-  - component: {fileID: 2658126447794522871}
   - component: {fileID: 2658126447794522868}
   - component: {fileID: 2658126447794522869}
   m_Layer: 0
@@ -65,20 +64,6 @@ MonoBehaviour:
   panel: {fileID: 0}
   animator: {fileID: 0}
   popUptext: {fileID: 0}
---- !u!114 &2658126447794522871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2658126447794522867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c00a1ce2418b96d4c9316451fb8064b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
-  isPaused: 0
 --- !u!114 &2658126447794522868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,8 +82,6 @@ MonoBehaviour:
   joystickTouchPos: {x: 0, y: 0}
   joystickOriginalPos: {x: 0, y: 0}
   joystickRadius: 0
-  spriteRenderer: {fileID: 0}
-  animator: {fileID: 0}
 --- !u!114 &2658126447794522869
 MonoBehaviour:
   m_ObjectHideFlags: 0

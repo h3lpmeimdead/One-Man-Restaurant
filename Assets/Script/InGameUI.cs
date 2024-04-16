@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI; //for using the UI
 using TMPro;
 
-public class UIScript : MonoBehaviour
+public class InGameUI : MonoBehaviour
 {
-    [SerializeField] public GameObject creditui;
     [SerializeField] private GameObject panel;
     [SerializeField] public Animator animator;
     [SerializeField] private TMP_Text popUptext;
