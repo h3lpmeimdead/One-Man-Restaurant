@@ -17,10 +17,7 @@ public class PickUpSystem : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     Player player;
     private CheckForPlacementScript checkForPlacement;
-    GameObject placedItem;
     public bool canDelete;
-    
-    public float angle;
     public Joystick joystick;
 
     // Start is called before the first frame update
@@ -28,13 +25,10 @@ public class PickUpSystem : MonoBehaviour
     {
         canPick = true;
         player = GetComponent<Player>();
-        
-        
     }
     // Update is called once per frame
     void Update()
     {
-        
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, 1);
 
         if (hit.collider != null)
@@ -42,8 +36,7 @@ public class PickUpSystem : MonoBehaviour
             Debug.Log(hit.collider.name);
         }
 
-        Debug.DrawRay(transform.position, Vector3.right, Color.red);
-        
+        Debug.DrawRay(transform.position, Vector3.right, Color.red); 
     }
 
     public void PickUpItem()
@@ -57,7 +50,6 @@ public class PickUpSystem : MonoBehaviour
                 {
                     return;
                 }
-
                 spriteRenderer = collider.GetComponent<SpriteRenderer>();
                 spriteRenderer.sortingOrder = 1;
                 holdItem = collider.gameObject;
@@ -67,7 +59,6 @@ public class PickUpSystem : MonoBehaviour
             }
         }
     }
-
     public void DropItem()
     {
         if (canPick == false)
@@ -84,8 +75,6 @@ public class PickUpSystem : MonoBehaviour
             spriteRenderer.sortingOrder = -1;
         }
     }
-
-
     public void PlaceObject()
     {
         if (GameManager.Instance.currentActiveCat != player.catID)
@@ -102,9 +91,6 @@ public class PickUpSystem : MonoBehaviour
             spriteRenderer.sortingOrder = 0;
         }
     }
-
-    
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<CheckForPlacementScript>() != null)
@@ -120,22 +106,4 @@ public class PickUpSystem : MonoBehaviour
             checkForPlacement = null;
         }
     }
-
-    public void DeleteObject()
-    {
-        if (canPick == false && player.CompareTag("Trash"))
-        {
-            //Debug.Log("trash");
-            if (GameManager.Instance.currentActiveCat != player.catID)
-            {
-                return;
-            }
-            holdItem.GetComponent<Collider2D>().enabled = true;
-            holdItem.transform.SetParent(null);
-            Destroy(holdItem);
-            canPick = true;
-            canDelete = false;
-        }
-    }
-    
 }

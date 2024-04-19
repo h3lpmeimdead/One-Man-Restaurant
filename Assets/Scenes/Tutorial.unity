@@ -344,8 +344,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.625, y: 0.875}
-    newSize: {x: 0.625, y: 0.875}
+    oldSize: {x: 0.8125, y: 1.0625}
+    newSize: {x: 0.13, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -393,13 +393,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1259313179, guid: cd75c997a0a885e439907ad5a52f3841, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -586973300, guid: 46dc22cb73c237740ade50664e0246c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.625, y: 0.875}
+  m_Size: {x: 0.13, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -434,6 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 457488798}
   playerSpeed: 5
+  rb: {fileID: 0}
   catID: 0
   spriteRenderer: {fileID: 142453203}
 --- !u!114 &142453206
@@ -451,7 +452,6 @@ MonoBehaviour:
   holdItem: {fileID: 0}
   canPick: 0
   canDelete: 0
-  angle: 0
   joystick: {fileID: 0}
 --- !u!1 &181332327
 GameObject:
@@ -5262,8 +5262,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.625, y: 0.875}
-    newSize: {x: 0.625, y: 0.875}
+    oldSize: {x: 0.8125, y: 1.0625}
+    newSize: {x: 0.8125, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -5312,12 +5312,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2124485932, guid: f2f503ed10eebd14791cce2b5efc2c58, type: 3}
+  m_Sprite: {fileID: -1674303068, guid: 46dc22cb73c237740ade50664e0246c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.625, y: 0.875}
+  m_Size: {x: 0.8125, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5352,6 +5352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 457488798}
   playerSpeed: 5
+  rb: {fileID: 0}
   catID: 2
   spriteRenderer: {fileID: 331133946}
 --- !u!114 &331133949
@@ -5369,7 +5370,6 @@ MonoBehaviour:
   holdItem: {fileID: 0}
   canPick: 0
   canDelete: 0
-  angle: 0
   joystick: {fileID: 0}
 --- !u!1 &359147398
 GameObject:
@@ -9135,8 +9135,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.625, y: 0.875}
-    newSize: {x: 0.1, y: 0.14}
+    oldSize: {x: 0.8125, y: 1.0625}
+    newSize: {x: 0.6875, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -9185,12 +9185,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -148597734, guid: bbebe9ec4aa6f584aaa4679d005b3ca3, type: 3}
+  m_Sprite: {fileID: 1871539393, guid: 46dc22cb73c237740ade50664e0246c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.1, y: 0.14}
+  m_Size: {x: 0.6875, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -9204,8 +9204,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797628906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.62, y: 0.39, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 9.75, y: 0.22, z: 0}
+  m_LocalScale: {x: 0.7675, y: 0.7675, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -9225,6 +9225,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 457488798}
   playerSpeed: 5
+  rb: {fileID: 0}
   catID: 1
   spriteRenderer: {fileID: 1797628909}
 --- !u!114 &1797628913
@@ -9242,7 +9243,6 @@ MonoBehaviour:
   holdItem: {fileID: 0}
   canPick: 0
   canDelete: 0
-  angle: 0
   joystick: {fileID: 0}
 --- !u!1001 &1839230198
 PrefabInstance:
@@ -10265,6 +10265,22 @@ PrefabInstance:
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 1797628906}
+    - target: {fileID: 7880648165849073572, guid: 64d61ca8724862940b0791580584e852, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1871539393, guid: 46dc22cb73c237740ade50664e0246c2, type: 3}
+    - target: {fileID: 7880648165849073595, guid: 64d61ca8724862940b0791580584e852, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -26.299805
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880648165849073595, guid: 64d61ca8724862940b0791580584e852, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 35.000023
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880648166100624983, guid: 64d61ca8724862940b0791580584e852, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -586973300, guid: 46dc22cb73c237740ade50664e0246c2, type: 3}
     - target: {fileID: 7880648166255051440, guid: 64d61ca8724862940b0791580584e852, type: 3}
       propertyPath: m_Name
       value: SwitchManager
@@ -10285,6 +10301,10 @@ PrefabInstance:
       propertyPath: foodManager
       value: 
       objectReference: {fileID: 1797628906}
+    - target: {fileID: 7880648166320363147, guid: 64d61ca8724862940b0791580584e852, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1674303068, guid: 46dc22cb73c237740ade50664e0246c2, type: 3}
     - target: {fileID: 9117444163665969008, guid: 64d61ca8724862940b0791580584e852, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.24994
