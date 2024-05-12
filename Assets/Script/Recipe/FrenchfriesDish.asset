@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
-  m_Name: Sandwich
+  m_Name: FrenchfriesDish
   m_EditorClassIdentifier: 
   ingredientsArray:
-  - id: 4
+  - id: 1
     amount: 1
-  - id: 30
+  - id: 17
     amount: 1
-  - id: 33
+  - id: 39
     amount: 1
   resultItem:
-    id: 28
-    resultSprite: {fileID: 0}
+    id: 18
+    resultSprite: {fileID: 21300000, guid: 5b73c6fb0a09dba4b9d5a7a10310c6d1, type: 3}
