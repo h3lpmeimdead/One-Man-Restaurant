@@ -40,3 +40,4 @@ public class ResultItem
     public int id;
     public Sprite resultSprite;
 }
+
