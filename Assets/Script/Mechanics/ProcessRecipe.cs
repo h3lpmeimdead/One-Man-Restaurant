@@ -18,6 +18,13 @@ public class ProcessRecipe : MonoBehaviour
 
         }
     }
+
+
+    public void start()
+    {
+
+        
+    }
 }   
 
 [Serializable]
@@ -25,3 +32,6 @@ public class Recipe
 {
     public ScriptableObject recipe;
 }
+
+
+
