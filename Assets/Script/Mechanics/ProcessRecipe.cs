@@ -19,12 +19,6 @@ public class ProcessRecipe : MonoBehaviour
         }
     }
 
-
-    public void start()
-    {
-
-        
-    }
 }   
 
 [Serializable]
