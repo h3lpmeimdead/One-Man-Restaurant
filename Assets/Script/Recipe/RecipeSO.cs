@@ -2,24 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "New Recipe", menuName = "Recipe")]
 public class RecipeSO : ScriptableObject
 {
-    public Ingredients[] ingredientsArray;
+    public List<Ingredients> ingredientsArray;
     public ResultItem resultItem;
 
-    public bool IsCompleted(Ingredients[] inputs)
+    public bool IsCompleted(List<int> inputs)
     {
-        if (inputs.Length != ingredientsArray.Length)
+        if (inputs.Count != ingredientsArray.Count)
             return false;
 
-        Array.Sort(inputs);
-        Array.Sort(ingredientsArray);
+        inputs.Sort();
+        ingredientsArray.OrderBy(x => x.id);
 
-        for (int i = 0; i < inputs.Length; i++)
+        for (int i = 0; i < inputs.Count; i++)
         {
-            if (ingredientsArray[i] != inputs[i])
+            if (ingredientsArray[i].id != inputs[i])
                 return false;
         }
 
