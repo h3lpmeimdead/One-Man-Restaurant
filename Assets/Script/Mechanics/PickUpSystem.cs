@@ -19,6 +19,9 @@ public class PickUpSystem : MonoBehaviour
     private CheckForPlacementScript checkForPlacement;
     public bool canDelete;
     public Joystick joystick;
+    public float radius;
+    [SerializeField] public List<int> listIngredients = new List<int>();
+    PickableObject pickableObject;
 
     // Start is called before the first frame update
     void Start()
@@ -30,18 +33,22 @@ public class PickUpSystem : MonoBehaviour
     void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, 1);
-
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector3.right, -1);
+        RaycastHit2D hit3 = Physics2D.Raycast(transform.position, Vector3.up, 2);
+        RaycastHit2D hit4 = Physics2D.Raycast(transform.position, Vector3.up, -2);
         if (hit.collider != null)
         {
             Debug.Log(hit.collider.name);
         }
 
-        Debug.DrawRay(transform.position, Vector3.right, Color.red); 
+        Debug.DrawRay(transform.position, Vector3.right, Color.red);
+        Debug.DrawRay(transform.position, Vector3.up, Color.red);
     }
 
     public void PickUpItem()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.5f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, radius);
+        
         foreach(Collider2D collider in colliders)
         {
             if(collider.TryGetComponent<IPickable>(out var pickable) && canPick == true)
@@ -89,6 +96,7 @@ public class PickUpSystem : MonoBehaviour
             canPick = true;
             holdItem = null;
             spriteRenderer.sortingOrder = 0;
+            listIngredients.Add(pickableObject.id);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -105,5 +113,10 @@ public class PickUpSystem : MonoBehaviour
         {
             checkForPlacement = null;
         }
+    }
+
+    public void AddIngredient(int id)
+    {
+        listIngredients.Add(pickableObject.id);
     }
 }

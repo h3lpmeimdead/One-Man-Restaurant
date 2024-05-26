@@ -6,19 +6,30 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime;
+    private float remainingTime;
+    SpawnCustomers spawnCustomers;
+
+    private void Awake()
+    {
+        remainingTime = spawnCustomers.totalTime;
+    }
     // Update is called once per frame
     void Update()
     {
-        if(remainingTime > 0)
+        CountDown();
+    }
+
+    public void CountDown()
+    {
+        if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
         }
-        else if(remainingTime < 0)
+        else if (remainingTime < 0)
         {
             remainingTime = 0;
         }
-        if(remainingTime <= 10)
+        if (remainingTime <= 10)
         {
             timerText.color = Color.red;
         }

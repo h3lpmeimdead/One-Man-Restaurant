@@ -15,8 +15,8 @@ MonoBehaviour:
   ingredientsArray:
   - id: 4
     amount: 1
-  - id: 38
+  - id: 35
     amount: 1
   resultItem:
     id: 19
-    resultSprite: {fileID: 0}
+    resultSprite: {fileID: 21300000, guid: 54befe4c90a644044a5f49d5b6f893b5, type: 3}

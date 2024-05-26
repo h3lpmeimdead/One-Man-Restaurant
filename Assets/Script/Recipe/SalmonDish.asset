@@ -15,10 +15,10 @@ MonoBehaviour:
   ingredientsArray:
   - id: 1
     amount: 1
-  - id: 26
+  - id: 24
     amount: 1
-  - id: 40
+  - id: 37
     amount: 1
   resultItem:
-    id: 27
+    id: 25
     resultSprite: {fileID: 21300000, guid: a3e348b8f0713e44ab4b689635a276a9, type: 3}

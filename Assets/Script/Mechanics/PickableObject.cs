@@ -6,6 +6,13 @@ using UnityEngine.UI;
 public class PickableObject : MonoBehaviour, IPickable, IPlaceable
 {
     public string text;
+    [SerializeField] public int id;
+    
+
+    private void Awake()
+    {
+        
+    }
     public void OnPlace(Vector2 targetPosition)
     {
         GetComponent<Collider2D>().enabled = true;
@@ -35,4 +42,5 @@ public class PickableObject : MonoBehaviour, IPickable, IPlaceable
             pop.animator.SetTrigger("Close");
         }
     }
+
 }

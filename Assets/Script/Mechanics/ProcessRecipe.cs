@@ -5,27 +5,42 @@ using System;
 
 public class ProcessRecipe : MonoBehaviour
 {
-    public Recipe[] recipes;
-    
+    [SerializeField] private RecipeSO[] m_RecipeData;
+    [SerializeField] private SpriteRenderer m_Renderer;
+    PickUpSystem m_PickUpSystem;
 
+    public void Start()
+    {
+        m_PickUpSystem = GetComponent<PickUpSystem>();
+    }
     public void checkRecipe()
     {
-        string objName = "3";
-        int id = 3;
-
-        if (objName.Equals(id.ToString()))
-        {
-
-        }
+        
     }
 
-}   
+    public void AddIngredient(int id)
+    {
+        //listIngredient.Add(pickableObject.id);
+    }
+    public void checkIngredient()
+    {
+        foreach (RecipeSO recipe in m_RecipeData)
+        {
+            if (recipe.IsCompleted(m_PickUpSystem.listIngredients))
+            {
+                Debug.Log("Completed");
+                m_Renderer.sprite = recipe.resultItem.resultSprite;
+                return;
 
-[Serializable]
-public class Recipe
-{
-    public ScriptableObject recipe;
-}
+            }
+        }
+        Debug.Log("Failed");
+    }
+    private void RemoveIngredients()
+    {
+        m_PickUpSystem.listIngredients = new List<int>();
+    }
+}   
 
 
 

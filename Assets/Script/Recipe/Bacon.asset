@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Bacon
   m_EditorClassIdentifier: 
   ingredientsArray:
-  - id: 32
+  - id: 30
     amount: 1
   resultItem:
     id: 8
-    resultSprite: {fileID: 0}
+    resultSprite: {fileID: 21300000, guid: b0e6c63444dcf8942a9417f87b7bf69b, type: 3}
