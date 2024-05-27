@@ -33,9 +33,6 @@ public class PickUpSystem : MonoBehaviour
     void Update()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, 1);
-        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector3.right, -1);
-        RaycastHit2D hit3 = Physics2D.Raycast(transform.position, Vector3.up, 2);
-        RaycastHit2D hit4 = Physics2D.Raycast(transform.position, Vector3.up, -2);
         if (hit.collider != null)
         {
             Debug.Log(hit.collider.name);
@@ -96,7 +93,7 @@ public class PickUpSystem : MonoBehaviour
             canPick = true;
             holdItem = null;
             spriteRenderer.sortingOrder = 0;
-            listIngredients.Add(pickableObject.id);
+            AddIngredient(pickableObject.id);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

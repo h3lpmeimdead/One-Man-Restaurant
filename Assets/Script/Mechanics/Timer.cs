@@ -6,11 +6,12 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    private float remainingTime;
+    public float remainingTime;
     SpawnCustomers spawnCustomers;
 
-    private void Awake()
+    private void Start()
     {
+        spawnCustomers = FindObjectOfType<SpawnCustomers>();
         remainingTime = spawnCustomers.totalTime;
     }
     // Update is called once per frame

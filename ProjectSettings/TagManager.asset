@@ -46,3 +46,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Food
+    uniqueID: 557146693
+    locked: 0
+  - name: Player
+    uniqueID: 2420256173
+    locked: 0
+  - name: Furniture
+    uniqueID: 2605569393
+    locked: 0
+  - name: Top
+    uniqueID: 2203117865
+    locked: 0
+  - name: Ground
+    uniqueID: 3802925911
+    locked: 0
