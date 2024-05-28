@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpawnCustomers : MonoBehaviour
 {
     public GameObject[] customerPrefab; //array of customer prefabs
-    public Transform[] spawnPoints; //array of spawn points
+    public List<Transform> spawnPoints; //array of spawn points
+    public List<Transform> usedPoints = new List<Transform>();
     public float spawnInterval; //time between spawns
     public float totalTime; //total time to spawn customers
     public float numberOfCustomers; //number of customers to spawn at each interval
@@ -32,29 +33,35 @@ public class SpawnCustomers : MonoBehaviour
 
     void SpawnCustomer()
     {
-        for(int i = 0; i < numberOfCustomers; i++)
-        {
-            List<int> availableSpawnPoints = new List<int>();
-            for(int j = 0; j < spawnPoints.Length; j++)
-            {
-                if(!occupiedSpawnPoints.Contains(j))
-                {
-                    availableSpawnPoints.Add(j);
-                }
-            }
+        int targetIndex = Random.Range(0, spawnPoints.Count);
+        Vector3 spawnPos = spawnPoints[targetIndex].position;
+        Instantiate(customerPrefab[Random.Range(0, customerPrefab.Length)], spawnPos, Quaternion.identity);
+        usedPoints.Add(spawnPoints[targetIndex]);
+        spawnPoints.RemoveAt(targetIndex);
 
-            if(availableSpawnPoints.Count == 0)
-            {
-                return;
-            }
-            //randomly select an available spawnpoint
-            int randomPrefabIndex = Random.Range(0, customerPrefab.Length);
-            int randomSpawnPointIndex = Random.Range(0, spawnPoints.Length);
-            Vector3 spawnPos = spawnPoints[randomSpawnPointIndex].position;
-            Instantiate(customerPrefab[randomPrefabIndex], spawnPos, Quaternion.identity);
+        //for(int i = 0; i < numberOfCustomers; i++)
+        //{
+        //    List<int> availableSpawnPoints = new List<int>();
+        //    for(int j = 0; j < spawnPoints.Length; j++)
+        //    {
+        //        if(!occupiedSpawnPoints.Contains(j))
+        //        {
+        //            availableSpawnPoints.Add(j);
+        //        }
+        //    }
 
-            occupiedSpawnPoints.Add(randomSpawnPointIndex);
-        }
-        
+        //    if(availableSpawnPoints.Count == 0)
+        //    {
+        //        return;
+        //    }
+        //    //randomly select an available spawnpoint
+        //    int randomPrefabIndex = Random.Range(0, customerPrefab.Length);
+        //    int randomSpawnPointIndex = Random.Range(0, spawnPoints.Length);
+        //    Vector3 spawnPos = spawnPoints[randomSpawnPointIndex].position;
+        //    Instantiate(customerPrefab[randomPrefabIndex], spawnPos, Quaternion.identity);
+
+        //    occupiedSpawnPoints.Add(randomSpawnPointIndex);
+        //}
+
     }
 }

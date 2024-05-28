@@ -11,8 +11,9 @@ public class ProcessRecipe : MonoBehaviour
 
     public void Start()
     {
-        m_PickUpSystem = GetComponent<PickUpSystem>();
+        m_PickUpSystem = FindObjectOfType<PickUpSystem>();
     }
+
     public void checkRecipe()
     {
         
@@ -30,6 +31,7 @@ public class ProcessRecipe : MonoBehaviour
             {
                 Debug.Log("Completed");
                 m_Renderer.sprite = recipe.resultItem.resultSprite;
+                Instantiate(recipe.resultItem.resultSprite, transform.position, Quaternion.identity);
                 return;
 
             }
@@ -41,6 +43,3 @@ public class ProcessRecipe : MonoBehaviour
         m_PickUpSystem.listIngredients = new List<int>();
     }
 }   
-
-
-

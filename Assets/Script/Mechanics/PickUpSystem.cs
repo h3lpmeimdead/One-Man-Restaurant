@@ -60,6 +60,9 @@ public class PickUpSystem : MonoBehaviour
                 pickable.Pickable(transform);
                 canPick = false;
                 canDelete = true;
+                pickableObject = collider.GetComponent<PickableObject>();
+                
+                Debug.Log(pickableObject.id);
             }
         }
     }
@@ -94,6 +97,7 @@ public class PickUpSystem : MonoBehaviour
             holdItem = null;
             spriteRenderer.sortingOrder = 0;
             AddIngredient(pickableObject.id);
+            checkForPlacement.GetComponent<ProcessRecipe>().checkIngredient();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
