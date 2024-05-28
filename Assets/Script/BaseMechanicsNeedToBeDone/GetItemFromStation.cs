@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class GetItemFromStation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public bool isPressed;
+    public void OnTakeItem()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        isPressed = true;
     }
 }

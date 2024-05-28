@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3102292968441072186}
   - component: {fileID: 3102292968441072185}
-  m_Layer: 0
+  - component: {fileID: 8427961029853768846}
+  m_Layer: 7
   m_Name: CustomerHedgehog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,3 +85,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8427961029853768846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102292968441072184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145564c3358896845967852b19b12d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customerName: Hedgehog

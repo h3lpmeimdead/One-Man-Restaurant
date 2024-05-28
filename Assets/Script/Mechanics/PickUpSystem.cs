@@ -32,14 +32,7 @@ public class PickUpSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, 1);
-        if (hit.collider != null)
-        {
-            Debug.Log(hit.collider.name);
-        }
-
-        Debug.DrawRay(transform.position, Vector3.right, Color.red);
-        Debug.DrawRay(transform.position, Vector3.up, Color.red);
+        player.ShootingRaycast();
     }
 
     public void PickUpItem()

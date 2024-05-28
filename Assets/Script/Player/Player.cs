@@ -10,7 +10,8 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     public int catID;
     public SpriteRenderer spriteRenderer;
-    
+    public float rayDistance = 2f;
+
     //public Animator animator;
 
     void Start()
@@ -29,6 +30,33 @@ public class Player : MonoBehaviour
         {
             rb.velocity = Vector2.zero;
             //animator.SetTrigger("still");
+        }
+    }
+
+    public void ShootingRaycast()
+    {
+        // Define the four directions
+        Vector2[] directions = new Vector2[]
+        {
+            Vector2.up,
+            Vector2.down,
+            Vector2.left,
+            Vector2.right
+        };
+
+        // Shoot raycasts in each direction
+        foreach (Vector2 direction in directions)
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, rayDistance);
+
+            if (hit.collider != null)
+            {
+                Debug.Log("Hit " + hit.collider.name);
+                // Perform actions when an object is hit
+            }
+
+            // For visualization in the Scene view
+            Debug.DrawRay(transform.position, direction * rayDistance, Color.red);
         }
     }
 }
