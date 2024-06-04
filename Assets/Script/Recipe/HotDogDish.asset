@@ -12,11 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
   m_Name: HotDogDish
   m_EditorClassIdentifier: 
-  ingredientsArray:
-  - id: 1
-    amount: 1
-  - id: 21
-    amount: 1
-  resultItem:
-    id: 22
-    resultSprite: {fileID: 21300000, guid: 57c45d953359ce647aac3642a3c657c4, type: 3}
+  ingredientsList: 0000000005000000
+  resultItemSprite: {fileID: 21300000, guid: 57c45d953359ce647aac3642a3c657c4, type: 3}

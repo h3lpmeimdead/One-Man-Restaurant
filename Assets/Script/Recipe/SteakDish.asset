@@ -12,13 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
   m_Name: SteakDish
   m_EditorClassIdentifier: 
-  ingredientsArray:
-  - id: 1
-    amount: 1
-  - id: 28
-    amount: 1
-  - id: 42
-    amount: 1
-  resultItem:
-    id: 29
-    resultSprite: {fileID: 21300000, guid: 2c14ae75100231345b4da75b0cb7c029, type: 3}
+  ingredientsList: 00000000070000000e000000
+  resultItemSprite: {fileID: 21300000, guid: 2c14ae75100231345b4da75b0cb7c029, type: 3}

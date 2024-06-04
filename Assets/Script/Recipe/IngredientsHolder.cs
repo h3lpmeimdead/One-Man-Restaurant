@@ -9,7 +9,7 @@ public class IngredientsHolder : MonoBehaviour
 
     public void Check()
     {
-        Debug.Log("check");
+        //Debug.Log("check");
         if(RecipeManager.intstance.CheckRecipe(ingredients, transform.GetChild(0).transform))
         {
             ingredients.Clear();

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
   m_Name: FrenchfriesDish
   m_EditorClassIdentifier: 
-  ingredientsList: 
-  resultItemSprite: {fileID: 0}
+  ingredientsList: 00000000090000001a000000
+  resultItemSprite: {fileID: 21300000, guid: 5b73c6fb0a09dba4b9d5a7a10310c6d1, type: 3}
