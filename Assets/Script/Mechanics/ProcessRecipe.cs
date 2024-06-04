@@ -23,21 +23,21 @@ public class ProcessRecipe : MonoBehaviour
     {
         //listIngredient.Add(pickableObject.id);
     }
-    public void checkIngredient()
-    {
-        foreach (RecipeSO recipe in m_RecipeData)
-        {
-            if (recipe.IsCompleted(m_PickUpSystem.listIngredients))
-            {
-                Debug.Log("Completed");
-                m_Renderer.sprite = recipe.resultItem.resultSprite;
-                Instantiate(recipe.resultItem.resultSprite, transform.position, Quaternion.identity);
-                return;
+    //public void checkIngredient()
+    //{
+    //    foreach (RecipeSO recipe in m_RecipeData)
+    //    {
+    //        if (recipe.IsCompleted(m_PickUpSystem.listIngredients))
+    //        {
+    //            Debug.Log("Completed");
+    //            m_Renderer.sprite = recipe.resultItem.resultSprite;
+    //            Instantiate(recipe.resultItem.resultSprite, transform.position, Quaternion.identity);
+    //            return;
 
-            }
-        }
-        Debug.Log("Failed");
-    }
+    //        }
+    //    }
+    //    Debug.Log("Failed");
+    //}
     private void RemoveIngredients()
     {
         m_PickUpSystem.listIngredients = new List<int>();

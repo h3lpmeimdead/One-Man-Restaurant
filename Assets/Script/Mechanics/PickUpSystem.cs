@@ -55,7 +55,7 @@ public class PickUpSystem : MonoBehaviour
                 canDelete = true;
                 pickableObject = collider.GetComponent<PickableObject>();
                 
-                Debug.Log(pickableObject.id);
+                //Debug.Log(pickableObject.id);
             }
         }
     }
@@ -89,8 +89,8 @@ public class PickUpSystem : MonoBehaviour
             canPick = true;
             holdItem = null;
             spriteRenderer.sortingOrder = 0;
-            AddIngredient(pickableObject.id);
-            checkForPlacement.GetComponent<ProcessRecipe>().checkIngredient();
+            AddIngredient(pickableObject.ingredient, pickableObject.gameObject);
+            //checkForPlacement.GetComponent<ProcessRecipe>().checkIngredient();
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -109,8 +109,8 @@ public class PickUpSystem : MonoBehaviour
         }
     }
 
-    public void AddIngredient(int id)
+    public void AddIngredient(IngredientName name, GameObject obj)
     {
-        listIngredients.Add(pickableObject.id);
+        checkForPlacement.Pos.GetComponentInParent<IngredientsHolder>().AddIngredient(name, obj);
     }
 }

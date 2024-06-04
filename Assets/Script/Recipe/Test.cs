@@ -10,20 +10,20 @@ public class Test : MonoBehaviour
 
     [SerializeField] List<int> listIngredient = new List<int>();
 
-    public void AddIngredient(int id)
-    {
-        listIngredient.Add(id);
-        foreach(RecipeSO recipe in m_RecipeData)
-        {
-            if (recipe.IsCompleted(listIngredient))
-            {
-                Debug.Log("Completed");
-                m_Renderer.sprite = recipe.resultItem.resultSprite;
-                return;
-            }
-        }
-        Debug.Log("Failed");
-    }
+    //public void AddIngredient(int id)
+    //{
+    //    listIngredient.Add(id);
+    //    foreach(RecipeSO recipe in m_RecipeData)
+    //    {
+    //        if (recipe.IsCompleted(listIngredient))
+    //        {
+    //            Debug.Log("Completed");
+    //            m_Renderer.sprite = recipe.resultItem.resultSprite;
+    //            return;
+    //        }
+    //    }
+    //    Debug.Log("Failed");
+    //}
 
     private void RemoveIngredients()
     {

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PickableObject : MonoBehaviour, IPickable, IPlaceable
 {
     public string text;
-    [SerializeField] public int id;
+    [SerializeField] public IngredientName ingredient;
     
 
     private void Awake()
@@ -42,5 +42,5 @@ public class PickableObject : MonoBehaviour, IPickable, IPlaceable
             pop.animator.SetTrigger("Close");
         }
     }
-
 }
+
