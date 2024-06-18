@@ -19,9 +19,7 @@ public class CheckForPlacementScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-
             placeButton.SetActive(true);
-
         }
     }
 

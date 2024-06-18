@@ -93,6 +93,16 @@ public class PickUpSystem : MonoBehaviour
             //checkForPlacement.GetComponent<ProcessRecipe>().checkIngredient();
         }
     }
+
+    public void Triangle()
+    {
+        if (GameManager.Instance.currentActiveCat != player.catID)
+        {
+            return;
+        }
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<CheckForPlacementScript>() != null)

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
   m_Name: SandwichDish
   m_EditorClassIdentifier: 
-  ingredientsList: 0000000003000000
+  ingredientsList: 00000000020000000500000011000000
   resultItemSprite: {fileID: 21300000, guid: 98acfbe4e9e919b4984a4f9f422ec21c, type: 3}

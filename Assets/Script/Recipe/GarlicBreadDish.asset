@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
   m_Name: GarlicBreadDish
   m_EditorClassIdentifier: 
-  ingredientsList: 000000000a000000
+  ingredientsList: 00000000020000000d000000
   resultItemSprite: {fileID: 21300000, guid: 2c9eef5e04f8a0848b06d806415dc336, type: 3}

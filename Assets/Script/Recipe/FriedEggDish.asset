@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
   m_Name: FriedEggDish
   m_EditorClassIdentifier: 
-  ingredientsList: 000000000600000011000000
+  ingredientsList: 000000000600000007000000
   resultItemSprite: {fileID: 21300000, guid: a66677b20f9898648b85a78c289137b6, type: 3}

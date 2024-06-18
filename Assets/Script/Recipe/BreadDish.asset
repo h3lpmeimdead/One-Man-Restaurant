@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a0120a2d11b9d74183b7c14dc87bdb7, type: 3}
   m_Name: BreadDish
   m_EditorClassIdentifier: 
-  ingredientsList: 000000000c000000
-  resultItemSprite: {fileID: 21300000, guid: 25c61b77c238bc640a61cbcbe043d96b, type: 3}
+  ingredientsList: 0000000002000000
+  resultItemSprite: {fileID: 21300000, guid: 68bf67fdd67b47e4faac0a5138392ed2, type: 3}

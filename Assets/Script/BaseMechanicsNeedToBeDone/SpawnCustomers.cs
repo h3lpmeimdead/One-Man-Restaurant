@@ -13,6 +13,7 @@ public class SpawnCustomers : MonoBehaviour
     public float currentTime; 
     private List<int> occupiedSpawnPoints = new List<int>(); //list to keep track occupied spawn points
     public float maxNumberOfCustomers;
+    
     private void Update()
     {
         if (currentTime <= totalTime)
@@ -38,30 +39,5 @@ public class SpawnCustomers : MonoBehaviour
         Instantiate(customerPrefab[Random.Range(0, customerPrefab.Length)], spawnPos, Quaternion.identity);
         usedPoints.Add(spawnPoints[targetIndex]);
         spawnPoints.RemoveAt(targetIndex);
-
-        //for(int i = 0; i < numberOfCustomers; i++)
-        //{
-        //    List<int> availableSpawnPoints = new List<int>();
-        //    for(int j = 0; j < spawnPoints.Length; j++)
-        //    {
-        //        if(!occupiedSpawnPoints.Contains(j))
-        //        {
-        //            availableSpawnPoints.Add(j);
-        //        }
-        //    }
-
-        //    if(availableSpawnPoints.Count == 0)
-        //    {
-        //        return;
-        //    }
-        //    //randomly select an available spawnpoint
-        //    int randomPrefabIndex = Random.Range(0, customerPrefab.Length);
-        //    int randomSpawnPointIndex = Random.Range(0, spawnPoints.Length);
-        //    Vector3 spawnPos = spawnPoints[randomSpawnPointIndex].position;
-        //    Instantiate(customerPrefab[randomPrefabIndex], spawnPos, Quaternion.identity);
-
-        //    occupiedSpawnPoints.Add(randomSpawnPointIndex);
-        //}
-
     }
 }
