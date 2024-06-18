@@ -10,6 +10,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject oneStar;
     [SerializeField] GameObject twoStars;
     [SerializeField] GameObject threeStars;
+    [SerializeField] GameObject menuShowcase;
+    [SerializeField] GameObject menuShowcaseInterface;
+
+    private void Start()
+    {
+        menuShowcase.SetActive(true);
+        menuShowcaseInterface.SetActive(false);
+    }
 
     public void CheckForTimeRunsOut()
     {
@@ -20,6 +28,7 @@ public class UIManager : MonoBehaviour
             twoStars.SetActive(false);
             threeStars.SetActive(false);
             SetActiveUI(false);
+            //AudioManager.instance.PlaySFX("ButtonClick");
         }
         if (timer.remainingTime == 0 /*&& goal check 1 star*/)
         {
@@ -64,6 +73,19 @@ public class UIManager : MonoBehaviour
                 obj.SetActive(isActive);
             }
         }
+    }
 
+    public void OpenMenuShowcase()
+    {
+        menuShowcase.SetActive(false);
+        menuShowcaseInterface.SetActive(true);
+        //AudioManager.instance.PlaySFX("ButtonClick");
+    }
+
+    public void CloseMenuShowcase()
+    {
+        menuShowcase.SetActive(true);
+        menuShowcaseInterface.SetActive(false);
+        //AudioManager.instance.PlaySFX("ButtonClick");
     }
 }

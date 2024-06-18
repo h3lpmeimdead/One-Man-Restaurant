@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //PlayBGM();
+        PlayBGM("BackgroundMusic");
     }
     public void PlayBGM(string name)
     {

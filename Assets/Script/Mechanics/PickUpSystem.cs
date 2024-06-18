@@ -54,7 +54,7 @@ public class PickUpSystem : MonoBehaviour
                 canPick = false;
                 canDelete = true;
                 pickableObject = collider.GetComponent<PickableObject>();
-                
+                //AudioManager.instance.PlaySFX("ButtonClick");
                 //Debug.Log(pickableObject.id);
             }
         }
@@ -73,6 +73,7 @@ public class PickUpSystem : MonoBehaviour
             canPick = true;
             canDelete = false;
             spriteRenderer.sortingOrder = -1;
+            //AudioManager.instance.PlaySFX("ButtonClick");
         }
     }
     public void PlaceObject()
@@ -91,6 +92,7 @@ public class PickUpSystem : MonoBehaviour
             spriteRenderer.sortingOrder = 0;
             AddIngredient(pickableObject.ingredient, pickableObject.gameObject);
             //checkForPlacement.GetComponent<ProcessRecipe>().checkIngredient();
+            //AudioManager.instance.PlaySFX("ButtonClick");
         }
     }
 
@@ -100,6 +102,7 @@ public class PickUpSystem : MonoBehaviour
         {
             return;
         }
+        //AudioManager.instance.PlaySFX("ButtonClick");
 
     }
 
