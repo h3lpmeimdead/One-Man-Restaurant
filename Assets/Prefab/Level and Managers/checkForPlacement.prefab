@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 6358697671425680536}
   - component: {fileID: 6358697671425680537}
   - component: {fileID: 6358697671425680539}
+  - component: {fileID: 1132811436083489869}
   m_Layer: 0
   m_Name: checkForPlacement
   m_TagString: Counter
@@ -105,3 +106,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pos: {fileID: 6358697670863877900}
   placeButton: {fileID: 0}
+  placedObject: {fileID: 0}
+--- !u!114 &1132811436083489869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358697671425680542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a5a3f4fc90d1ca4295f602c788acfed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

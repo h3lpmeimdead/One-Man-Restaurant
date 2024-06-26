@@ -33,6 +33,7 @@ public class SwitchingCharacter : MonoBehaviour
         waiter.GetComponent<Player>().enabled = true;
         foodManager.GetComponent<Player>().enabled = false;
         chef.GetComponent<Player>().enabled = false;
+        AudioManager.instance.PlaySFX("ButtonClick");
     }
     public void SwitchToFoodManager()
     {
@@ -41,6 +42,7 @@ public class SwitchingCharacter : MonoBehaviour
         waiter.GetComponent<Player>().enabled = false;
         foodManager.GetComponent<Player>().enabled = true;
         chef.GetComponent<Player>().enabled = false;
+        AudioManager.instance.PlaySFX("ButtonClick");
     }
     
     public void SwitchToChef()
@@ -51,5 +53,6 @@ public class SwitchingCharacter : MonoBehaviour
         waiter.GetComponent<Player>().enabled = false;
         foodManager.GetComponent<Player>().enabled = false;
         chef.GetComponent<Player>().enabled = true;
+        AudioManager.instance.PlaySFX("ButtonClick");
     }
 }

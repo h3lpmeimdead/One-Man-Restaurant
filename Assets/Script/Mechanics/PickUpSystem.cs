@@ -22,12 +22,16 @@ public class PickUpSystem : MonoBehaviour
     public float radius;
     [SerializeField] public List<int> listIngredients = new List<int>();
     PickableObject pickableObject;
+    public bool trianglePressed;
+    Quest quest;
+    Dish dish;
 
     // Start is called before the first frame update
     void Start()
     {
         canPick = true;
         player = GetComponent<Player>();
+        quest = FindObjectOfType<Quest>();
     }
     // Update is called once per frame
     void Update()
@@ -54,7 +58,7 @@ public class PickUpSystem : MonoBehaviour
                 canPick = false;
                 canDelete = true;
                 pickableObject = collider.GetComponent<PickableObject>();
-                //AudioManager.instance.PlaySFX("ButtonClick");
+                AudioManager.instance.PlaySFX("ButtonClick");
                 //Debug.Log(pickableObject.id);
             }
         }
@@ -73,7 +77,7 @@ public class PickUpSystem : MonoBehaviour
             canPick = true;
             canDelete = false;
             spriteRenderer.sortingOrder = -1;
-            //AudioManager.instance.PlaySFX("ButtonClick");
+            AudioManager.instance.PlaySFX("ButtonClick");
         }
     }
     public void PlaceObject()
@@ -92,18 +96,38 @@ public class PickUpSystem : MonoBehaviour
             spriteRenderer.sortingOrder = 0;
             AddIngredient(pickableObject.ingredient, pickableObject.gameObject);
             //checkForPlacement.GetComponent<ProcessRecipe>().checkIngredient();
-            //AudioManager.instance.PlaySFX("ButtonClick");
+            AudioManager.instance.PlaySFX("ButtonClick");
         }
     }
 
-    public void Triangle()
-    {
-        if (GameManager.Instance.currentActiveCat != player.catID)
-        {
-            return;
-        }
-        //AudioManager.instance.PlaySFX("ButtonClick");
+    //public void TriangleDeleteItem()
+    //{
+    //    if (GameManager.Instance.currentActiveCat != player.catID)
+    //    {
+    //        return;
+    //    }
+        
+    //}
 
+    public void TriangleServeCustomer()
+    {
+        if (canPick == false)
+        {
+            //Debug.Log("a");
+            if (GameManager.Instance.currentActiveCat != player.catID)
+            {
+                return;
+            }
+            //holdItem.GetComponent<IPlaceable>().OnPlace(transform.position);
+            Destroy(holdItem.gameObject);
+            holdItem = null;
+            canPick = true;
+            canDelete = false;
+            //spriteRenderer.sortingOrder = -1;
+            quest.currentQuest++;
+            AudioManager.instance.PlaySFX("ButtonClick");
+            trianglePressed = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -125,5 +149,6 @@ public class PickUpSystem : MonoBehaviour
     public void AddIngredient(IngredientName name, GameObject obj)
     {
         checkForPlacement.Pos.GetComponentInParent<IngredientsHolder>().AddIngredient(name, obj);
+        AudioManager.instance.PlaySFX("Cooking");
     }
 }

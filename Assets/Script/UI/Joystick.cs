@@ -38,6 +38,7 @@ public class Joystick : MonoBehaviour
         if(joystickDist < joystickRadius) 
         {
             joystick.transform.position = joystickTouchPos + joystickVec * joystickDist;
+            //AudioManager.instance.PlaySFX("Walking");
         }
         else
         {

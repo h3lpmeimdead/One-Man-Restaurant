@@ -46,7 +46,7 @@ Transform:
   - {fileID: 9117943149606184107}
   - {fileID: 9117943149847188183}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9117943148542137028
 MonoBehaviour:
@@ -83,11 +83,24 @@ MonoBehaviour:
   - {fileID: 9117943148935747231}
   - {fileID: 9117943149606184107}
   - {fileID: 9117943149847188183}
-  spawnInterval: 5
-  totalTime: 30
+  usedPoints: []
+  spawnInterval: 4
+  totalTime: 180
   numberOfCustomers: 1
   currentTime: 0
-  maxNumberOfCustomers: 0
+  possibleDishOrder:
+  - {fileID: 11400000, guid: e2449640b108c624995eeb7f81799458, type: 2}
+  - {fileID: 11400000, guid: b29ba7e8d6996e84aa5ae46d50e9bc61, type: 2}
+  - {fileID: 11400000, guid: 58138380e2e4a504a9d054fb6c3392b7, type: 2}
+  - {fileID: 11400000, guid: 67ea5013e4c196242b99a91dafc7f8da, type: 2}
+  - {fileID: 11400000, guid: 0f93f59574811414b9c704aa449b98b9, type: 2}
+  - {fileID: 11400000, guid: 1a142e3277acff047963190e0ebf9c03, type: 2}
+  - {fileID: 11400000, guid: fb069afdbf8d2904e8d564b37acec90e, type: 2}
+  - {fileID: 11400000, guid: 8c1a29deb14843f4ebe596c9a1bb1d71, type: 2}
+  - {fileID: 11400000, guid: 4447cb97d4c0c6e43a7633c4a80ce25a, type: 2}
+  - {fileID: 11400000, guid: 0b9827099fbc3214a8047af74caf471d, type: 2}
+  - {fileID: 11400000, guid: 1b289f16ea389974c8499277a61f77ba, type: 2}
+  - {fileID: 11400000, guid: c29bba0ec539ba64bb680c5e848cbf9f, type: 2}
 --- !u!1 &9117943148606027465
 GameObject:
   m_ObjectHideFlags: 0

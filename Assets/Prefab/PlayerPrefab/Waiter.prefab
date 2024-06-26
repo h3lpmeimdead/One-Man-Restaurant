@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7206938035200584589}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 26.87, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7206938035200584590
 SpriteRenderer:
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -586973300, guid: 46dc22cb73c237740ade50664e0246c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,6 +151,9 @@ MonoBehaviour:
   canPick: 0
   canDelete: 0
   joystick: {fileID: 0}
+  radius: 0.5
+  listIngredients: 
+  trianglePressed: 0
 --- !u!114 &7206938035200584586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +170,4 @@ MonoBehaviour:
   playerSpeed: 5
   catID: 0
   spriteRenderer: {fileID: 7206938035200584590}
+  rayDistance: 2

@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class InstantiateGarlic : MonoBehaviour
+{
+    [SerializeField] public GameObject garlic;
+    [SerializeField] public GameObject pos;
+    //PickUpSystem pickUpSystem;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Instantiate(garlic, pos.transform.position, Quaternion.identity);
+        }
+    }
+}

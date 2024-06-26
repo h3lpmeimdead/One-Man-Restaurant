@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9117285645325867307
 SpriteRenderer:
@@ -151,6 +151,9 @@ MonoBehaviour:
   canPick: 0
   canDelete: 0
   joystick: {fileID: 0}
+  radius: 0.5
+  listIngredients: 
+  trianglePressed: 0
 --- !u!114 &9117285645325867311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +170,4 @@ MonoBehaviour:
   playerSpeed: 5
   catID: 2
   spriteRenderer: {fileID: 9117285645325867307}
+  rayDistance: 2

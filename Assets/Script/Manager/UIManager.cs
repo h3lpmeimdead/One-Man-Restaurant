@@ -79,13 +79,13 @@ public class UIManager : MonoBehaviour
     {
         menuShowcase.SetActive(false);
         menuShowcaseInterface.SetActive(true);
-        //AudioManager.instance.PlaySFX("ButtonClick");
+        AudioManager.instance.PlaySFX("ButtonClick");
     }
 
     public void CloseMenuShowcase()
     {
         menuShowcase.SetActive(true);
         menuShowcaseInterface.SetActive(false);
-        //AudioManager.instance.PlaySFX("ButtonClick");
+        AudioManager.instance.PlaySFX("ButtonClick");
     }
 }

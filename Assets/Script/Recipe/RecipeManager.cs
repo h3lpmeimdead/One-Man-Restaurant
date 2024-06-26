@@ -3,29 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public enum IngredientName
-{
-    Dish,
-    Bowl,
-    Bread,
-    RawMeat,
-    Tomato,
-    Sausage,
-    Egg,
-    SpringOnion,
-    RawBacon,
-    Bun,
-    Cheese,
-    Chocolate,
-    Potato,
-    Garlic,
-    RawSalmon,
-    RawDonut,
-    Ketchup,
-    Lettuce
-}
-
 
 public class RecipeManager : MonoBehaviour
 {
@@ -61,7 +38,6 @@ public class RecipeManager : MonoBehaviour
 
             if (isComplete)
             {
-                Debug.Log("true");
                 GameObject obj = new GameObject("Dish", typeof(PickableObject), typeof(BoxCollider2D), typeof(SpriteRenderer));
                 obj.GetComponent<BoxCollider2D>().isTrigger = true;
                 obj.GetComponent<SpriteRenderer>().sprite = recipeList[i].resultItemSprite;

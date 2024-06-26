@@ -44,9 +44,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -171,7 +171,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -302,7 +302,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071842c5ffa9e7748ac83e4e6f2fc951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: []
-  SFX: []
+  BGM:
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: e54ecd476fa80734ca1c5a310669bd50, type: 3}
+  SFX:
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: 0af837848b0083b478fe6f91b75988e3, type: 3}
+  - name: Cooking
+    clip: {fileID: 8300000, guid: ed543e674d4387f428b13dc942927eec, type: 3}
+  - name: DishComplete
+    clip: {fileID: 8300000, guid: 97a1e30f5a146004db4886a5e8fc8764, type: 3}
+  - name: PlacingPlates
+    clip: {fileID: 8300000, guid: 38dd1c6c735042e409e4f10cff5038b5, type: 3}
+  - name: ServeCustomer
+    clip: {fileID: 8300000, guid: de32737968952284ca2ad9de339084f5, type: 3}
+  - name: Walking
+    clip: {fileID: 8300000, guid: 9432f467eb81b7e4ea45a855c3baef50, type: 3}
   BGMsource: {fileID: 1577085058150746792}
   SFXsource: {fileID: 1891617589803579924}

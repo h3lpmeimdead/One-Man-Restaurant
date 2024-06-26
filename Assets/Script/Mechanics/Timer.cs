@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     public float remainingTime;
     SpawnCustomers spawnCustomers;
+    Quest quest;
 
     private void Start()
     {
+        quest = FindObjectOfType<Quest>();
         spawnCustomers = FindObjectOfType<SpawnCustomers>();
         remainingTime = spawnCustomers.totalTime;
     }
@@ -26,9 +29,10 @@ public class Timer : MonoBehaviour
         {
             remainingTime -= Time.deltaTime;
         }
-        else if (remainingTime < 0)
+        else if (remainingTime < 0 && quest.currentQuest < 5)
         {
             remainingTime = 0;
+            SceneManager.LoadScene("GameOver");
         }
         if (remainingTime <= 10)
         {

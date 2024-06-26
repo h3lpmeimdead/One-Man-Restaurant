@@ -7,38 +7,33 @@ using UnityEngine.UIElements;
 
 public class InGameMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseMenu, settingMenu;
+    [SerializeField] public GameObject pauseMenu, settingMenu, onM, onS, offM, offS;
     public Slider BGMSlider, SFXSlider;
-    public bool isPaused;
+    //public bool isPaused;
 
     void Awake()
     {
         pauseMenu.SetActive(false);
+        settingMenu.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
-        if (isPaused)
-        {
-            PauseGame();
-        }
-        else
-        {
-            ResumeGame();
-        }
+        
     }
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        isPaused = true;
         //AudioManager.instance.PlaySFX("ButtonClick");
+        pauseMenu.SetActive(true);
+        settingMenu.SetActive(false);
+        Time.timeScale = 0f;
+        //isPaused = true;
     }
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
+        //isPaused = false;
         //AudioManager.instance.PlaySFX("ButtonClick");
     }
     public void QuitGame()
@@ -54,8 +49,9 @@ public class InGameMenu : MonoBehaviour
 
     public void Setting()
     {
-        pauseMenu.SetActive(false);
+        Debug.Log("setting");
         settingMenu.SetActive(true);
+        pauseMenu.SetActive(false);
         //AudioManager.instance.PlaySFX("ButtonClick");
     }
 
@@ -66,14 +62,32 @@ public class InGameMenu : MonoBehaviour
         //AudioManager.instance.PlaySFX("ButtonClick");
     }
 
-    public void ToggleBGM()
+    public void ToggleOnBGM()
     {
         AudioManager.instance.ToggleBGM();
+        offM.SetActive(true);
+        onM.SetActive(false);
         //AudioManager.instance.PlaySFX("ButtonClick");
     }
-    public void ToggleSFX() 
+    public void ToggleOffBGM()
+    {
+        AudioManager.instance.ToggleBGM();
+        offM.SetActive(false);
+        onM.SetActive(true);
+        //AudioManager.instance.PlaySFX("ButtonClick");
+    }
+    public void ToggleOnSFX() 
     {
         AudioManager.instance.ToggleSFX();
+        offS.SetActive(true);
+        onS.SetActive(false);
+        //AudioManager.instance.PlaySFX("ButtonClick");
+    }
+    public void ToggleOffSFX()
+    {
+        AudioManager.instance.ToggleSFX();
+        offS.SetActive(false);
+        onS.SetActive(true);
         //AudioManager.instance.PlaySFX("ButtonClick");
     }
     public void BGMVolume()

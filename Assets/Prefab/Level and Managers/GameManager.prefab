@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2658126447794522870}
   - component: {fileID: 2658126447794522868}
   - component: {fileID: 2658126447794522869}
+  - component: {fileID: 457488801}
+  - component: {fileID: 457488805}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -33,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2658126447794522865
 MonoBehaviour:
@@ -60,7 +62,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a30887740aec458498da6d3954c7a55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditui: {fileID: 0}
   panel: {fileID: 0}
   animator: {fileID: 0}
   popUptext: {fileID: 0}
@@ -98,3 +99,33 @@ MonoBehaviour:
   waiter: {fileID: 0}
   foodManager: {fileID: 0}
   chef: {fileID: 0}
+--- !u!114 &457488801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658126447794522867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99d458bf873cd3c408fce91a958b4e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  settingMenu: {fileID: 0}
+  onM: {fileID: 0}
+  onS: {fileID: 0}
+  offM: {fileID: 0}
+  offS: {fileID: 0}
+--- !u!114 &457488805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2658126447794522867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f242ab425494c346a1a8196d06c4320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
