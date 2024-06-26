@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using System.Net;
-using Unity.VisualScripting.Dependencies.Sqlite;
 
 public class VolumeSetting : MonoBehaviour
 {
