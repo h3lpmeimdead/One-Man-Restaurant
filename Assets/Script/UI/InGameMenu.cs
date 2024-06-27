@@ -44,6 +44,7 @@ public class InGameMenu : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
         //AudioManager.instance.PlaySFX("ButtonClick");
     }
 
